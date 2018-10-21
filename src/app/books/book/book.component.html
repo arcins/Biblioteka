@@ -2,5 +2,13 @@
   <h2>Tytuł książki</h2>
 <p><i>Autor</i> | ISBN: 000-00-000-0000-0 | powieść</p>
 <p class="opis">bardzo długi opis</p>
-<button class="btn btn-outline-success">Edytuj książkę</button>&nbsp;
-<button class="btn btn-outline-success">Wypożycz</button>
+<button
+  class="btn btn-outline-success"
+  [routerLink]="['/book','1','edit']">
+  Edytuj książkę
+</button>&nbsp;
+<button
+  class="btn btn-outline-success"
+  [routerLink]="['/borrow']">
+  Wypożycz
+</button>

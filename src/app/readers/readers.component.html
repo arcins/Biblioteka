@@ -13,22 +13,26 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Adam Mickiewicz</td>
+      <td><a [routerLink]="['/reader','1']">Adam Mickiewicz</a></td>
       <td>3</td>
       <td>20.10.2018 r.</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Juliusz Słowacki</td>
+      <td><a [routerLink]="['/reader','1']">Juliusz Słowacki</a></td>
       <td>5</td>
       <td class="text-danger">12.10.2018 r. !!</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Maria Skłodowska-Curie</td>
+      <td><a [routerLink]="['/reader','1']">Maria Skłodowska-Curie</a></td>
       <td>0</td>
       <td>brak</td>
     </tr>
   </tbody>
 </table>
-<button class="btn btn-outline-success">Dodaj nowego czytelnika</button>
+<button
+  class="btn btn-outline-success"
+  [routerLink]="['/reader','add']">
+  Dodaj nowego czytelnika
+</button>

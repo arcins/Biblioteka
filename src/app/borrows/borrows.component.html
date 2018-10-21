@@ -1,3 +1,100 @@
 <p>
-  borrows works!
-</p>
+  <h5>Wypożyczenia:</h5>
+  <div class="card bg-light mb-3">
+    <div class="card-header">data wypożyczenia: 14.09.2018 r.</div>
+    <div class="card-body">
+      <h5 class="card-title text-success">Juliusz Słowacki</h5>
+      <p class="card-text">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Tytuł</th>
+              <th scope="col">Autor</th>
+              <th scope="col">Gatunek</th>
+              <th scope="col">Termin</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Przygody Tomka Sawyera</td>
+              <td>Mark Twain</td>
+              <td>powieść</td>
+              <td class="text-danger">14.10.2018 r. !!</td>
+              <td><a href="#" class="badge badge-info">Oznacz jako oddana</a></td>
+
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Zwierzęta i zwierzątka</td>
+              <td>Dmitroca Zbigniew</td>
+              <td>dla dzieci</td>
+              <td class="text-danger">14.10.2018 r. !!</td>
+              <td><a href="#" class="badge badge-info">Oznacz jako oddana</a></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Gotowanie krok po kroku. Ciasta i desery </td>
+              <td>Magnier-Moreno Marianne</td>
+              <td>poradniki</td>
+              <td class="text-danger">14.10.2018 r. !!</td>
+              <td><a href="#" class="badge badge-info">Oznacz jako oddana</a></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+  <div class="card bg-light mb-3">
+    <div class="card-header">data wypożyczenia: 14.09.2018 r.</div>
+    <div class="card-body">
+      <h5 class="card-title text-success">Juliusz Słowacki</h5>
+      <p class="card-text">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Tytuł</th>
+              <th scope="col">Autor</th>
+              <th scope="col">Gatunek</th>
+              <th scope="col">Termin</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Przygody Tomka Sawyera</td>
+              <td>Mark Twain</td>
+              <td>powieść</td>
+              <td class="text-danger">14.10.2018 r. !!</td>
+              <td><a href="#" class="badge badge-info">Oznacz jako oddana</a></td>
+
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Zwierzęta i zwierzątka</td>
+              <td>Dmitroca Zbigniew</td>
+              <td>dla dzieci</td>
+              <td class="text-danger">14.10.2018 r. !!</td>
+              <td><a href="#" class="badge badge-info">Oznacz jako oddana</a></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Gotowanie krok po kroku. Ciasta i desery </td>
+              <td>Magnier-Moreno Marianne</td>
+              <td>poradniki</td>
+              <td class="text-danger">14.10.2018 r. !!</td>
+              <td><a href="#" class="badge badge-info">Oznacz jako oddana</a></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+  <button
+    class="btn btn-outline-success"
+    [routerLink]="['/borrow']">
+    Wypożycz
+  </button>

@@ -14,26 +14,26 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Przygody Tomka Sawyera</td>
+      <td><a [routerLink]="['/book','1']">Przygody Tomka Sawyera</a></td>
       <td>Mark Twain</td>
       <td>powieść</td>
       <td></td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Zwierzęta i zwierzątka</td>
+      <td><a [routerLink]="['/book','1']">Zwierzęta i zwierzątka</a></td>
       <td>Dmitroca Zbigniew</td>
       <td>dla dzieci</td>
       <td class="text-danger">wypożyczona</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Gotowanie krok po kroku. Ciasta i desery </td>
+      <td><a [routerLink]="['/book','1']">Gotowanie krok po kroku. Ciasta i desery</a></td>
       <td>Magnier-Moreno Marianne</td>
       <td>poradniki</td>
       <td></td>
     </tr>
   </tbody>
 </table>
-<button class="btn btn-outline-success">Dodaj książkę</button> &nbsp;
-<button class="btn btn-outline-success">Wypożycz</button>
+<button class="btn btn-outline-success" [routerLink]="['/book','edit']">Dodaj książkę</button> &nbsp;
+<button class="btn btn-outline-success" [routerLink]="['/borrow']">Wypożycz</button>
