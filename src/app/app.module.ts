@@ -13,6 +13,9 @@ import { BorrowsComponent } from './borrows/borrows.component';
 import { BorrowEditComponent } from './borrows/borrow-edit/borrow-edit.component';
 import { ReaderEditComponent } from './readers/reader-edit/reader-edit.component';
 
+import { BooksService } from './books/books.service';
+import { ReadersService } from './readers/readers.service';
+
 const appRoutes: Routes = [
   { path: '', component: BooksComponent },
   { path: 'books', component: BooksComponent },
@@ -43,7 +46,7 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [BooksService, ReadersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

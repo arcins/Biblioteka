@@ -12,26 +12,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td><a [routerLink]="['/book','1']">Przygody Tomka Sawyera</a></td>
-      <td>Mark Twain</td>
-      <td>powieść</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td><a [routerLink]="['/book','1']">Zwierzęta i zwierzątka</a></td>
-      <td>Dmitroca Zbigniew</td>
-      <td>dla dzieci</td>
-      <td class="text-danger">wypożyczona</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td><a [routerLink]="['/book','1']">Gotowanie krok po kroku. Ciasta i desery</a></td>
-      <td>Magnier-Moreno Marianne</td>
-      <td>poradniki</td>
-      <td></td>
+    <tr *ngFor="let book of books; index as i" >
+      <th scope="row">{{ i + 1 }}</th>
+      <td><a [routerLink]="['/book',book.id]">{{ book.title }}</a></td>
+      <td>{{ book.author }}</td>
+      <td>{{ findCategoryName(book.category_id) }}</td>
+      <td
+        [ngClass]="{'text-danger': book.status}"
+        *ngIf="book.status; else: available">
+        wypożyczona
+      </td>
+      <ng-template #available><td> </td></ng-template>
     </tr>
   </tbody>
 </table>
