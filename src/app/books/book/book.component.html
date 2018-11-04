@@ -1,12 +1,24 @@
-  <p>
-  <h2>{{ book.title }}</h2>
-<p><i>{{ book.author }}</i> | ISBN: {{ book.isbn }} | {{ findCategoryName(book.category_id) }}</p>
-<p class="opis">{{ book.description }}</p>
+<p>
+<h2>{{ book.title }}</h2>
+<p>
+  <i>{{ book.author }}</i> | ISBN: {{ book.isbn }} | {{ findCategoryName(book.category_id) }}
+</p>
+<p class="opis">
+  {{ book.description }}
+</p>
+
 <button
   class="btn btn-outline-success"
-  [routerLink]="['/book','1','edit']">
+  [routerLink]="['/book',book.id,'edit']">
   Edytuj książkę
 </button>&nbsp;
+
+<button
+  class="btn btn-outline-success"
+  (click)='deleteBook()'>
+  Usuń książkę
+</button>&nbsp;
+
 <button
   class="btn btn-outline-success"
   [routerLink]="['/borrow']">

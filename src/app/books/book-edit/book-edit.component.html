@@ -1,21 +1,27 @@
 <p>
-<h5>Dodaj książkę:</h5>
+<h5 *ngIf='id; else nowa'>Edytuj książkę:</h5>
+<ng-template #nowa><h5>Dodaj książkę</h5></ng-template>
 <p></p>
-<form action="">
+
+
+<form  #tdForm="ngForm" (ngSubmit)="onSubmit(tdForm)">
+
   <div class="form-group row">
-    <label for="bookTitle" class="col-sm-2 col-form-label">
+    <label for="title" class="col-sm-2 col-form-label">
       Tytuł książki:
     </label>
     <div class="col-sm-10">
       <input
         type="text"
         class="form-control standard-form"
-        name="bookTitle"
-        id="bookTitle"
+        name="title"
+        id="title"
+        [ngModel]=book.title
         required
         placeholder="Tytuł książki">
     </div>
   </div>
+
   <div class="form-group row">
     <label for="author" class="col-sm-2 col-form-label">
       Autor:
@@ -26,9 +32,11 @@
         class="form-control standard-form"
         name="author"
         id="author"
+        [ngModel]=book.author
         placeholder="Autor książki">
     </div>
   </div>
+
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="isbn">Numer ISBN</label>
@@ -36,25 +44,45 @@
         type="text"
         class="form-control  standard-form"
         id="isbn"
+        name="isbn"
+        [ngModel]=book.isbn
         placeholder="numer isbn">
     </div>
+
     <div class="form-group col-md-6">
-      <label for="bookGenre">Gatunek:</label>
-      <select id="bookGenre" class="form-control standard-form">
-        <option selected>wybierz...</option>
-        <option>powieść</option>
-        <option>dla dzieci</option>
-        <option>poradniki</option>
+      <label for="category_id">Gatunek: {{ book.category_id }}</label>
+      <select
+        id="category_id"
+        name="category_id"
+        class="form-control standard-form"
+        [(ngModel)]="selectedValue"
+        #category_id="ngModel"
+        >
+        <option
+          *ngFor="let selectCategory of category"
+          [ngValue]="selectCategory.id"
+          [selected]="selectCategory.name==category[findCategoryId(book.category_id)].name">
+           {{ selectCategory.name }}
+        </option>
       </select>
     </div>
   </div>
+
   <div class="form-group">
     <label for="description">Opis:</label>
-    <textarea class="form-control standard-form" id="description" rows="3"></textarea>
+    <textarea
+      class="form-control standard-form"
+      id="description"
+      name="description"
+      [ngModel]=book.description
+       rows="3">
+    </textarea>
   </div>
+
   <div class="form-group row">
     <div class="col-sm-10">
-      <button class="btn btn-outline-success">Dodaj nową książkę</button>
+      <button class="btn btn-outline-success" *ngIf='id; else dodaj'>Edytuj książkę</button>
+      <ng-template #dodaj><button class="btn btn-outline-success">Dodaj książkę</button></ng-template>
     </div>
   </div>
 
